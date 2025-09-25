@@ -1,0 +1,11 @@
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/service/PromptService.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/model/ReviewResult.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/GiteaPrReviewBotApplication.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/controller/GiteaWebhookController.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/model/ReviewType.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/config/WebConfig.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/service/DiffProcessorService.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/service/GiteaService.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/config/OllamaConfig.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/service/CodeReviewService.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/dto/PullRequestEvent.java

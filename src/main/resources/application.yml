@@ -1,0 +1,103 @@
+spring:
+  application:
+    name: gitea-pr-review-bot
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    format-sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  ai:
+    openai:
+      base-url: ${LLM_BASE_URL:http://localhost:11434/v1}
+      api-key: ${LLM_API_KEY:dummy}
+      chat:
+        options:
+          model: ${LLM_MODEL:starcoder2:3b}
+          temperature: 0.1
+          max-tokens: 1000
+
+# Gitea Configuration
+gitea:
+  base-url: ${GITEA_BASE_URL}
+  token: ${GITEA_TOKEN}
+  webhook:
+    secret: ${GITEA_WEBHOOK_SECRET}
+
+# Bot Configuration
+bot:
+  review:
+    enabled: true
+    auto-approve: false
+    skip-draft: true
+    max-files-per-review: 10
+    max-lines-per-file: 500
+    chunk-size: 100                    # 한 번에 처리할 diff 라인 수
+    enable-static-analysis: true       # 정적 분석 필터링 활성화
+    parallel-processing: true          # 병렬 처리 활성화
+  prompts:
+    security: classpath:prompts/security/security-review.md
+    performance: classpath:prompts/performance/performance-review.md
+    style: classpath:prompts/style/code-style-review.md
+    general: classpath:prompts/general/general-review.md
+  models:
+    primary: ${LLM_MODEL:starcoder2:3b}
+    fallback: ${LLM_FALLBACK_MODEL:deepseek-coder:1.3b}
+
+# Logging
+logging:
+  level:
+    com.gitea.prbot: DEBUG
+    org.springframework.ai: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+# Management
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+# Server
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+logging:
+  level:
+    root: INFO
+    com.gitea.prbot: INFO

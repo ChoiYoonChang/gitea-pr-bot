@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(system_profiler:*)",
+      "Bash(sysctl:*)",
+      "Bash(awk:*)",
+      "Bash(java:*)",
+      "Bash(mvn:*)",
+      "Bash(curl:*)",
+      "Bash(git --version)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
