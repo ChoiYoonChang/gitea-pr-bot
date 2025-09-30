@@ -1,7 +1,8 @@
 package com.gitea.prbot.service;
 
 import com.gitea.prbot.model.ReviewType;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,9 @@ import java.util.EnumMap;
 import java.util.Map;
 
 @Service
-@Slf4j
 public class PromptService {
+
+    private static final Logger log = LoggerFactory.getLogger(PromptService.class);
 
     private final Map<ReviewType, String> promptTemplates = new EnumMap<>(ReviewType.class);
 

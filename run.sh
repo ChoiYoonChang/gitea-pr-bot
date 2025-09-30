@@ -6,16 +6,16 @@
 
 echo "🚀 Gitea PR Review Bot 시작 중..."
 
-# Java 17 환경 설정
-export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+# Temurin JDK 21 환경 설정
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # ===========================================
 # 필수 환경변수 설정
 # ===========================================
 
 # Gitea 연동 설정
-export GITEA_BASE_URL="${GITEA_BASE_URL:-http://localhost:3000}"
+export GITEA_BASE_URL="${GITEA_BASE_URL:-https://gitea.com}"
 export GITEA_TOKEN="${GITEA_TOKEN:-your_gitea_token_here}"
 export GITEA_WEBHOOK_SECRET="${GITEA_WEBHOOK_SECRET:-your_webhook_secret_here}"
 
@@ -47,11 +47,11 @@ echo "🔍 사전 요구사항 확인 중..."
 
 # Java 버전 확인
 java_version=$(java -version 2>&1 | head -n 1 | cut -d'"' -f2 | cut -d'.' -f1)
-if [ "$java_version" != "17" ]; then
-    echo "❌ Java 17이 필요합니다. 현재 버전: $java_version"
+if [ "$java_version" != "21" ]; then
+    echo "❌ Java 21이 필요합니다. 현재 버전: $java_version"
     exit 1
 fi
-echo "✅ Java 17 확인됨"
+echo "✅ Java 21 (Temurin) 확인됨"
 
 # JAR 파일 확인
 if [ ! -f "target/pr-review-bot-0.0.1-SNAPSHOT.jar" ]; then

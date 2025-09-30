@@ -2,18 +2,22 @@ package com.gitea.prbot.controller;
 
 import com.gitea.prbot.dto.PullRequestEvent;
 import com.gitea.prbot.service.CodeReviewService;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/webhook")
-@RequiredArgsConstructor
-@Slf4j
 public class GiteaWebhookController {
 
+    private static final Logger log = LoggerFactory.getLogger(GiteaWebhookController.class);
+
     private final CodeReviewService codeReviewService;
+
+    public GiteaWebhookController(CodeReviewService codeReviewService) {
+        this.codeReviewService = codeReviewService;
+    }
 
     @PostMapping("/gitea")
     public ResponseEntity<String> handleGiteaWebhook(@RequestBody PullRequestEvent event) {

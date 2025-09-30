@@ -50,7 +50,7 @@ src/
 ## 🛠️ 설치 및 실행
 
 ### 1. 사전 요구사항
-- Java 21+
+- **Temurin JDK 21** (프로덕션 및 개발 환경 표준)
 - Maven 3.8+
 - **Ollama** (로컬 LLM 서버)
 - **Gitea 서버** (자체 호스팅)
@@ -207,7 +207,7 @@ curl http://localhost:8080/api/webhook/health
 
 ### Docker를 사용한 배포
 ```dockerfile
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21-jdk-slim
 COPY target/pr-review-bot-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app.jar"]

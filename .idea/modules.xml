@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/git-pr-bot.iml" filepath="$PROJECT_DIR$/git-pr-bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/git-pr-bot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/git-pr-bot.main.iml" />
     </modules>
   </component>
 </project>

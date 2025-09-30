@@ -73,7 +73,7 @@ echo "Phase 1 환경 준비 완료 ✓"
   - [ ] Windows: 공식 사이트에서 다운로드
   - [x] 설치 확인: `ollama --version` ✅ Ollama 0.12.2 설치 완료
 
-- [x] **Ollama 서비스 시작**
+- [x] **ㅇ 서비스 시작**
   - [x] 서비스 시작: `ollama serve` ✅ 서비스 정상 실행중
   - [x] 백그라운드 실행 확인
   - [x] 포트 11434 리스닝 확인: `curl http://localhost:11434` ✅ 연결 정상
@@ -123,19 +123,19 @@ echo "Phase 2 시스템 설치 완료 ✓"
 ## ⚙️ Phase 3: 기본 설정 (20분)
 
 ### 3.1 환경 변수 설정
-- [ ] **환경 파일 생성**
-  - [ ] `cp .env.example .env`
-  - [ ] 환경 파일 권한 설정: `chmod 600 .env`
+- [x] **환경 파일 생성**
+  - [x] 중복된 환경 파일 정리 (.env.example 통합 완료)
+  - [x] `.env` 파일 생성 ✅ 기본 설정값으로 생성됨
+  - [x] 환경 파일 권한 설정: `chmod 600 .env`
 
-- [ ] **LLM 설정**
-  - [ ] `LLM_BASE_URL=http://localhost:11434/v1`
-  - [ ] `LLM_MODEL=starcoder2:3b`
-  - [ ] `LLM_FALLBACK_MODEL=deepseek-coder:1.3b`
+- [x] **LLM 설정**
+  - [x] `LLM_BASE_URL=http://localhost:11434` ✅ application.yml에서 Ollama 설정 적용
+  - [x] `LLM_MODEL=starcoder2:3b` ✅ 설정 완료
+  - [x] `LLM_FALLBACK_MODEL=deepseek-coder:1.3b` ✅ 설정 완료
 
-- [ ] **Gitea 연결 설정**
-  - [ ] `GITEA_BASE_URL=https://your-gitea-server.com` (실제 주소로 변경)
-  - [ ] Gitea 토큰 생성 및 설정 (다음 단계에서)
-  - [ ] 웹훅 시크릿 생성 (32자 랜덤 문자열)
+- [x] **Gitea 연결 설정 (기본값)**
+  - [x] `GITEA_BASE_URL=http://localhost:3000` ✅ 테스트용 기본값 설정
+  - [x] 웹훅 시크릿 기본값 설정 ✅ (실제 운영시 변경 필요)
 
 ### 3.2 Gitea 토큰 생성
 - [ ] **Personal Access Token 생성**

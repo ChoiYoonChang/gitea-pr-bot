@@ -1,6 +1,7 @@
 package com.gitea.prbot.service;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -9,8 +10,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-@Slf4j
 public class DiffProcessorService {
+
+    private static final Logger log = LoggerFactory.getLogger(DiffProcessorService.class);
 
     @Value("${bot.review.chunk-size:100}")
     private int chunkSize;

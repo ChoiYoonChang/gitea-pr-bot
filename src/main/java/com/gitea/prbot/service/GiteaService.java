@@ -2,7 +2,8 @@ package com.gitea.prbot.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-@Slf4j
 public class GiteaService {
+
+    private static final Logger log = LoggerFactory.getLogger(GiteaService.class);
 
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;

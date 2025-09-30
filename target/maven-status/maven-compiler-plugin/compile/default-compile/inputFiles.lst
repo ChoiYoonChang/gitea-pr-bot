@@ -3,7 +3,7 @@
 /Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/GiteaPrReviewBotApplication.java
 /Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/controller/GiteaWebhookController.java
 /Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/model/ReviewType.java
-/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/config/WebConfig.java
+/Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/config/RestTemplateConfig.java
 /Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/service/DiffProcessorService.java
 /Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/service/GiteaService.java
 /Users/rooky/IdeaProjects/git-pr-bot/src/main/java/com/gitea/prbot/config/OllamaConfig.java

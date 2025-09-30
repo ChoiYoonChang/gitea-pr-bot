@@ -3,8 +3,8 @@ package com.gitea.prbot.service;
 import com.gitea.prbot.dto.PullRequestEvent;
 import com.gitea.prbot.model.ReviewResult;
 import com.gitea.prbot.model.ReviewType;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.ChatClient;
 import org.springframework.ai.chat.ChatResponse;
 import org.springframework.ai.chat.messages.UserMessage;
@@ -21,14 +21,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class CodeReviewService {
+
+    private static final Logger log = LoggerFactory.getLogger(CodeReviewService.class);
 
     private final ChatClient chatClient;
     private final GiteaService giteaService;
     private final PromptService promptService;
     private final DiffProcessorService diffProcessorService;
+
+    public CodeReviewService(ChatClient chatClient, GiteaService giteaService, PromptService promptService, DiffProcessorService diffProcessorService) {
+        this.chatClient = chatClient;
+        this.giteaService = giteaService;
+        this.promptService = promptService;
+        this.diffProcessorService = diffProcessorService;
+    }
 
     private final ExecutorService executorService = Executors.newFixedThreadPool(4);
     private static final int CHUNK_SIZE = 100;

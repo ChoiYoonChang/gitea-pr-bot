@@ -20,7 +20,7 @@ com/gitea/prbot/config/OllamaConfig.class
 com/gitea/prbot/service/CodeReviewService.class
 com/gitea/prbot/service/PromptService.class
 com/gitea/prbot/controller/GiteaWebhookController.class
-com/gitea/prbot/config/WebConfig.class
 com/gitea/prbot/dto/PullRequestEvent$Repository$Owner$OwnerBuilder.class
 com/gitea/prbot/dto/PullRequestEvent$Repository$Owner.class
+com/gitea/prbot/config/RestTemplateConfig.class
 com/gitea/prbot/model/ReviewResult.class

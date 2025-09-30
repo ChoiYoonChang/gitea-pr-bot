@@ -3,7 +3,7 @@
 ## 🎯 프로젝트 개요
 
 **프로젝트명**: Gitea PR Review Bot (StarCoder2)  
-**기술 스택**: Spring Boot 3.2.0 + Spring AI 0.8.0 + StarCoder2-3B  
+**기술 스택**: Spring Boot 3.2.0 + Spring AI 0.8.0 + StarCoder2-3B + Temurin JDK 21  
 **목적**: 사내 보안을 위한 로컬 LLM 기반 자동 코드 리뷰 봇  
 **패키지**: `com.gitea.prbot`
 
@@ -182,8 +182,9 @@ git-pr-bot/
 - **테스트**: Spring Boot Test, TestContainers
 
 ### **빌드 설정**
-- **Java 버전**: 21
+- **Java 버전**: 21 (Temurin JDK) - 프로덕션 및 개발 환경 표준
 - **Spring AI 버전**: 0.8.0
+- **Lombok 버전**: 1.18.32 (Java 21 호환)
 - **리포지토리**: Spring Milestones, Spring Snapshots
 
 ---
