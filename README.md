@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gitea PR Review Bot (StarCoder2)
 
 Spring Boot + Spring AI + StarCoder2를 사용한 **사내 보안** 코드 리뷰 봇입니다.
@@ -265,3 +266,6 @@ ENTRYPOINT ["java", "-jar", "/app.jar"]
 ## 🆘 지원
 
 이슈가 있거나 문의사항이 있으시면 GitHub Issues를 이용해주세요.# gitea-pr-bot
+=======
+# sbs-datasync-bot
+>>>>>>> fd1c172 (first commit)
